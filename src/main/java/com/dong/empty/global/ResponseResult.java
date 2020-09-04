@@ -1,6 +1,6 @@
-package com.dong.springboot_empty.global;
+package com.dong.empty.global;
 
-import com.dong.springboot_empty.global.enums.BusinessEnum;
+import com.dong.empty.global.enums.BusinessEnum;
 import org.springframework.validation.BindingResult;
 
 import java.util.Objects;

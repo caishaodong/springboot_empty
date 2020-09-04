@@ -1,4 +1,4 @@
-package com.dong.springboot_empty.global.config.docs;
+package com.dong.empty.global.config.docs;
 
 import io.github.yedaxia.apidocs.Docs;
 import io.github.yedaxia.apidocs.DocsConfig;

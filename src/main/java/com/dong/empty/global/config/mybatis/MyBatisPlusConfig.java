@@ -1,4 +1,4 @@
-package com.dong.springboot_empty.global.config.mybatis;
+package com.dong.empty.global.config.mybatis;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.slf4j.Logger;

@@ -1,7 +1,7 @@
-package com.dong.springboot_empty.global.exception;
+package com.dong.empty.global.exception;
 
-import com.dong.springboot_empty.global.ResponseResult;
-import com.dong.springboot_empty.global.enums.BusinessEnum;
+import com.dong.empty.global.ResponseResult;
+import com.dong.empty.global.enums.BusinessEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;

@@ -1,4 +1,4 @@
-package com.dong.springboot_empty.global.enums;
+package com.dong.empty.global.enums;
 
 /**
  * @Author caishaodong

@@ -1,4 +1,4 @@
-package com.dong.springboot_empty.global.constant;
+package com.dong.empty.global.constant;
 
 /**
  * @Author caishaodong

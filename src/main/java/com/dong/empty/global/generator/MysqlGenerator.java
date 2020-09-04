@@ -1,4 +1,4 @@
-package com.dong.springboot_empty.global.generator;
+package com.dong.empty.global.generator;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;

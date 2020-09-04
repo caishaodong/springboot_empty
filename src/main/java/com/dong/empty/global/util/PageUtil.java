@@ -1,4 +1,4 @@
-package com.dong.springboot_empty.global.util;
+package com.dong.empty.global.util;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;

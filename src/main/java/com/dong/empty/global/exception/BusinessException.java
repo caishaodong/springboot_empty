@@ -1,7 +1,7 @@
-package com.dong.springboot_empty.global.exception;
+package com.dong.empty.global.exception;
 
 
-import com.dong.springboot_empty.global.enums.BusinessEnum;
+import com.dong.empty.global.enums.BusinessEnum;
 
 /**
  * @Author caishaodong
