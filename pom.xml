@@ -19,7 +19,7 @@
 		<mybatis-plus.version>3.2.0</mybatis-plus.version>
 		<mybatis-plus-generator.version>3.2.0</mybatis-plus-generator.version>
 		<freemarker.version>2.3.28</freemarker.version>
-		<druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
+		<druid-spring-boot-starter.version>1.1.21</druid-spring-boot-starter.version>
 		<japidocs.version>1.4.3</japidocs.version>
 		<poi.version>3.17</poi.version>
 		<poi-ooxml.version>3.17</poi-ooxml.version>
