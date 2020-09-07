@@ -24,6 +24,6 @@ public class BaseController {
     }
 
     public ResponseResult error(BusinessEnum businessEnum) {
-        return error(businessEnum);
+        return ResponseResult.error(businessEnum);
     }
 }
