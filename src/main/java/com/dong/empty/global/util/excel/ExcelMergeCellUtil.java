@@ -1,4 +1,4 @@
-package com.dong.empty.global.util;
+package com.dong.empty.global.util.excel;
 
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.BorderStyle;
@@ -15,7 +15,7 @@ import java.io.IOException;
  * @Date 2020-09-04 13:36
  * @Description POI工具类
  **/
-public class ExcelUtil {
+public class ExcelMergeCellUtil {
 
     /**
      * 合并单元格测试

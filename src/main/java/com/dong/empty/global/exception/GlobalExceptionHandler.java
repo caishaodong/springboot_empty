@@ -2,9 +2,11 @@ package com.dong.empty.global.exception;
 
 import com.dong.empty.global.ResponseResult;
 import com.dong.empty.global.enums.BusinessEnum;
+import com.dong.empty.global.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -20,7 +22,6 @@ import java.util.Objects;
 public class GlobalExceptionHandler {
     private final static Logger LOGGER = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-
     @ExceptionHandler(BusinessException.class)
     public ResponseResult businessException(BusinessException e) {
         return ResponseResult.error(e.getErrorCode(), e.getErrorMsg());
@@ -28,17 +29,19 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseResult methodArgumentNotValidException(MethodArgumentNotValidException e, BindingResult bindingResult) {
+        String errorMessage = "";
         if (Objects.nonNull(bindingResult) && bindingResult.hasErrors()) {
-            bindingResult.getAllErrors().forEach(objectError -> {
-                System.out.println(objectError.getDefaultMessage());
-            });
+            for (ObjectError objectError : bindingResult.getAllErrors()) {
+                LOGGER.error(objectError.getDefaultMessage());
+                errorMessage = StringUtil.isNotBlank(errorMessage) ? errorMessage : objectError.getDefaultMessage();
+            }
         }
-        return ResponseResult.error(500, e.getMessage());
+        return ResponseResult.error(BusinessEnum.PARAM_ERROR.getCode(), errorMessage);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseResult exception(Exception e) {
         LOGGER.error(e.getMessage(), e);
-        return ResponseResult.error(BusinessEnum.FAIL.getCode(), e.getMessage());
+        return ResponseResult.error(BusinessEnum.FAIL);
     }
 }
