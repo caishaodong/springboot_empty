@@ -3,6 +3,8 @@ package com.dong.empty.global.base;
 
 import com.dong.empty.global.ResponseResult;
 import com.dong.empty.global.enums.BusinessEnum;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @Author caishaodong
@@ -10,6 +12,7 @@ import com.dong.empty.global.enums.BusinessEnum;
  * @Description 基础类
  **/
 public class BaseController {
+    public static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class);
 
     public ResponseResult success() {
         return ResponseResult.success();
