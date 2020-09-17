@@ -2,7 +2,13 @@ package com.dong.empty.global.util;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * @Author caishaodong
@@ -10,6 +16,7 @@ import java.util.UUID;
  * @Description
  **/
 public class OrderNoUtils {
+    protected static final AtomicLong SEQ = new AtomicLong(1000);
     protected static final String PATTERN = "yyyyMMdd";
     protected static final DateTimeFormatter FORMATTER;
     static OrderNoUtils orderNoUtils;
@@ -26,7 +33,7 @@ public class OrderNoUtils {
         if (hashCode < 0) {
             hashCode = -hashCode;
         }
-        return OrderNoUtils.FORMATTER.format(LocalDateTime.now()).substring(2, 8) + String.format("%010d", hashCode);
+        return OrderNoUtils.FORMATTER.format(LocalDateTime.now()).substring(2, 8) + String.format("%010d", hashCode) + SEQ.getAndIncrement();
     }
 
     static {
@@ -35,6 +42,17 @@ public class OrderNoUtils {
     }
 
     public static void main(String[] args) {
-        System.out.println(getSerialNumber());
+        List<String> orderNos = Collections.synchronizedList(new ArrayList<String>());
+        IntStream.range(0, 100).parallel().forEach(i -> {
+            orderNos.add(getSerialNumber());
+        });
+
+        List<String> filterOrderNos = orderNos.stream().distinct().collect(Collectors.toList());
+
+        System.out.println(orderNos);
+
+        System.out.println("生成订单数：" + orderNos.size());
+        System.out.println("过滤重复后订单数：" + filterOrderNos.size());
+        System.out.println("重复订单数：" + (orderNos.size() - filterOrderNos.size()));
     }
 }

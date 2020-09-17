@@ -47,4 +47,18 @@ public class StringUtil {
         });
         return list;
     }
+
+    /**
+     * 字符串拼接
+     *
+     * @param strs
+     * @return
+     */
+    public static String concatString(String... strs) {
+        StringBuilder sb = new StringBuilder();
+        for (String str : strs) {
+            sb.append(isBlank(str) ? "" : str);
+        }
+        return sb.toString();
+    }
 }

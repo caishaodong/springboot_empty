@@ -3,6 +3,7 @@ package com.dong.empty.global.util.excel;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author caishaodong
@@ -30,6 +31,10 @@ public class ExcelSheetPO {
      * 数据集合
      */
     private List<List<Object>> dataList;
+    /**
+     * 行宽
+     */
+    private Map<Integer, Integer> columnWidthMap;
 
 
 }

@@ -1,6 +1,7 @@
 package com.dong.empty.global.util.excel;
 
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
+import com.shaoxing.lixing.global.util.StringUtil;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
@@ -16,10 +17,7 @@ import java.io.OutputStream;
 import java.net.URLEncoder;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @Author caishaodong
@@ -43,7 +41,7 @@ public class ExcelUtil {
     /**
      * 存储样式
      */
-    private static final HashMap<String, CellStyle> cellStyleMap = new HashMap<>();
+    private static HashMap<String, CellStyle> cellStyleMap;
 
     /**
      * 读取Excel
@@ -217,6 +215,7 @@ public class ExcelUtil {
     }
 
     private static Workbook createWorkBook(ExcelVersion version, List<ExcelSheetPO> excelSheets) {
+        cellStyleMap = new HashMap<>();
         Workbook wb = createWorkbook(version);
         for (int i = 0; i < excelSheets.size(); i++) {
             ExcelSheetPO excelSheetPO = excelSheets.get(i);
@@ -231,11 +230,11 @@ public class ExcelUtil {
     }
 
     private static void buildSheetData(Workbook wb, Sheet sheet, ExcelSheetPO excelSheetPO, ExcelVersion version) {
-        sheet.setDefaultRowHeight((short) 400);
-        sheet.setDefaultColumnWidth((short) 10);
-        //有需要可以自定义title和header
-//        createTitle(sheet, excelSheetPO, wb, version);
-//        createHeader(sheet, excelSheetPO, wb, version);
+        // 设置行宽
+        setColumnWith(sheet, excelSheetPO);
+        // 有需要可以自定义title和header
+        createTitle(sheet, excelSheetPO, wb, version);
+        createHeader(sheet, excelSheetPO, wb, version);
         createBody(sheet, excelSheetPO, wb, version);
     }
 
@@ -251,11 +250,11 @@ public class ExcelUtil {
         List<List<Object>> dataList = excelSheetPO.getDataList();
         for (int i = 0; i < dataList.size() && i < version.getMaxRow(); i++) {
             List<Object> values = dataList.get(i);
-//            Row row = sheet.createRow(2 + i);
-            Row row = sheet.createRow(i);
+            Row row = sheet.createRow(2 + i);
+//            Row row = sheet.createRow(i);
             for (int j = 0; j < values.size() && j < version.getMaxColumn(); j++) {
                 Cell cell = row.createCell(j);
-//                cell.setCellStyle(getStyle(STYLE_DATA, wb));
+                cell.setCellStyle(getStyle(STYLE_DATA, wb));
                 cell.setCellValue(values.get(j).toString());
             }
         }
@@ -271,7 +270,7 @@ public class ExcelUtil {
      * @param version
      */
     private static void createHeader(Sheet sheet, ExcelSheetPO excelSheetPO, Workbook wb, ExcelVersion version) {
-        String[] headers = excelSheetPO.getDataList().get(0).toArray(new String[0]);
+        String[] headers = excelSheetPO.getHeaders();
 
         if (headers == null) {
             Cell cellHeader = null;
@@ -279,7 +278,7 @@ public class ExcelUtil {
             Row row = sheet.createRow(1);
             for (int i = 0; i < headers.length && i < version.getMaxColumn(); i++) {
                 Cell cellHeader = row.createCell(i);
-//                cellHeader.setCellStyle(getStyle(STYLE_HEADER, wb));
+                cellHeader.setCellStyle(getStyle(STYLE_HEADER, wb));
                 cellHeader.setCellValue(headers[i]);
             }
         }
@@ -294,57 +293,91 @@ public class ExcelUtil {
      * @param version
      */
     private static void createTitle(Sheet sheet, ExcelSheetPO excelSheetPO, Workbook wb, ExcelVersion version) {
+        if (StringUtil.isBlank(excelSheetPO.getTitle())) {
+            return;
+        }
         Row titleRow = sheet.createRow(0);
         Cell titleCel = titleRow.createCell(0);
-        excelSheetPO.setTitle("123");
+        excelSheetPO.setTitle(excelSheetPO.getTitle());
         titleCel.setCellValue(excelSheetPO.getTitle());
-//        titleCel.setCellStyle(getStyle(STYLE_TITLE, wb));
+        titleCel.setCellStyle(getStyle(STYLE_TITLE, wb));
         // 限制最大列数
-        int column = excelSheetPO.getDataList().size() > version.getMaxColumn() ? version.getMaxColumn()
-                : excelSheetPO.getDataList().size();
+        int column = excelSheetPO.getHeaders().length > version.getMaxColumn() ? version.getMaxColumn() : excelSheetPO.getHeaders().length;
         sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, column - 1));
+    }
+
+    /**
+     * 设置行宽
+     *
+     * @param sheet
+     * @param excelSheetPO
+     */
+    private static void setColumnWith(Sheet sheet, ExcelSheetPO excelSheetPO) {
+        sheet.setDefaultRowHeight((short) 400);
+        sheet.setDefaultColumnWidth((short) 10);
+        Map<Integer, Integer> columnWithMap = excelSheetPO.getColumnWidthMap();
+        if (CollectionUtils.isEmpty(columnWithMap)) {
+            return;
+        }
+        Iterator<Map.Entry<Integer, Integer>> iterator = columnWithMap.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<Integer, Integer> entry = iterator.next();
+            Integer column = entry.getKey();
+            Integer width = entry.getValue();
+            sheet.setColumnWidth(column, width * 256);
+        }
+
+
     }
 
     /**
      * 获取样式style
      *
-     * @param version
+     * @param type
+     * @param wb
      * @return
      */
-//    private static CellStyle getStyle(String type, Workbook wb) {
-//
-//        if (cellStyleMap.containsKey(type)) {
-//            return cellStyleMap.get(type);
-//        }
-//        // 生成一个样式
-//        CellStyle style = wb.createCellStyle();
-//        style.setBorderBottom(HSSFCellStyle.BORDER_THIN);
-//        style.setBorderLeft(HSSFCellStyle.BORDER_THIN);
-//        style.setBorderRight(HSSFCellStyle.BORDER_THIN);
-//        style.setBorderTop(HSSFCellStyle.BORDER_THIN);
-//        style.setWrapText(true);
-//
-//        if (STYLE_HEADER == type) {
-//            style.setAlignment(HSSFCellStyle.ALIGN_CENTER);
-//            Font font = wb.createFont();
-//            font.setFontHeightInPoints((short) 16);
-//            font.setBoldweight(Font.BOLDWEIGHT_BOLD);
-//            style.setFont(font);
-//        } else if (STYLE_TITLE == type) {
-//            style.setAlignment(HSSFCellStyle.ALIGN_CENTER);
-//            Font font = wb.createFont();
-//            font.setFontHeightInPoints((short) 18);
-//            font.setBoldweight(Font.BOLDWEIGHT_BOLD);
-//            style.setFont(font);
-//        } else if (STYLE_DATA == type) {
-//            style.setAlignment(HSSFCellStyle.ALIGN_LEFT);
-//            Font font = wb.createFont();
-//            font.setFontHeightInPoints((short) 12);
-//            style.setFont(font);
-//        }
-//        cellStyleMap.put(type, style);
-//        return style;
-//    }
+    private static CellStyle getStyle(String type, Workbook wb) {
+
+        if (cellStyleMap.containsKey(type)) {
+            return cellStyleMap.get(type);
+        }
+
+        // 生成一个样式
+        CellStyle style = wb.createCellStyle();
+        style.setBorderBottom(BorderStyle.THIN);
+        style.setBorderLeft(BorderStyle.THIN);
+        style.setBorderRight(BorderStyle.THIN);
+        style.setBorderTop(BorderStyle.THIN);
+        style.setWrapText(true);
+        style.setLocked(false);
+
+        if (STYLE_TITLE.equals(type)) {
+            style.setAlignment(HorizontalAlignment.CENTER);
+            Font font = wb.createFont();
+            font.setFontHeightInPoints((short) 18);
+            font.setBold(true);
+            font.setFontName("宋体");
+            style.setFont(font);
+        } else if (STYLE_HEADER.equals(type)) {
+            style.setAlignment(HorizontalAlignment.CENTER);
+            Font font = wb.createFont();
+            font.setFontHeightInPoints((short) 14);
+            font.setBold(true);
+            font.setFontName("宋体");
+            style.setFont(font);
+        } else if (STYLE_DATA.equals(type)) {
+            style.setAlignment(HorizontalAlignment.LEFT);
+            Font font = wb.createFont();
+            font.setFontHeightInPoints((short) 12);
+            font.setFontName("宋体");
+            style.setFont(font);
+        }
+
+        cellStyleMap.put(type, style);
+        return style;
+    }
+
     private static Workbook createWorkbook(ExcelVersion version) {
         switch (version) {
             case V2003:
