@@ -23,7 +23,7 @@ import java.util.Objects;
 /**
  * @Author caishaodong
  * @Date 2020-09-18 14:21
- * @Description
+ * @Description 权限校验切面
  **/
 @Component
 @Aspect
