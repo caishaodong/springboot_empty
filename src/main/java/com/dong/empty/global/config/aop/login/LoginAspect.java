@@ -39,11 +39,21 @@ public class LoginAspect {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         String requestURI = request.getRequestURI();
 
-        Integer userId = (Integer) request.getSession().getAttribute("userId");
+        Long userId = getUserId(request);
         if (!FREE_LOGIN_URI_LIST.contains(requestURI) && Objects.isNull(userId)) {
             return ResponseResult.error(BusinessEnum.NOT_LOGIN);
         }
         return proceedingJoinPoint.proceed();
+    }
+
+    /**
+     * 获取用户id
+     *
+     * @param request
+     * @return
+     */
+    public Long getUserId(HttpServletRequest request) {
+        return (Long) request.getSession().getAttribute("userId");
     }
 
     static {
