@@ -2,6 +2,8 @@ package com.dong.empty.global.config.aop.login;
 
 import com.dong.empty.global.ResponseResult;
 import com.dong.empty.global.enums.BusinessEnum;
+import com.dong.empty.global.util.jwt.JwtUtil;
+import com.dong.empty.global.util.string.StringUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -35,7 +37,6 @@ public class LoginAspect {
 
     @Around("login()")
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        // 获取session中的用户信息
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         String requestURI = request.getRequestURI();
 
@@ -53,7 +54,29 @@ public class LoginAspect {
      * @return
      */
     public Long getUserId(HttpServletRequest request) {
+        return getUserIdFromRequestHeader(request);
+    }
+
+    /**
+     * 从session中获取userId
+     *
+     * @param request
+     * @return
+     */
+    public Long getUserIdFromSession(HttpServletRequest request) {
         return (Long) request.getSession().getAttribute("userId");
+    }
+
+    /**
+     * 从token中获取userId
+     *
+     * @param request
+     * @return
+     */
+    public Long getUserIdFromRequestHeader(HttpServletRequest request) {
+        String token = request.getHeader("Authorization");
+        Long userId = StringUtil.isBlank(token) ? null : JwtUtil.getUserIdByToken(token);
+        return userId;
     }
 
     static {

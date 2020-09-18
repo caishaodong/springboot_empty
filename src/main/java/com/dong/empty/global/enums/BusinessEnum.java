@@ -18,7 +18,7 @@ public enum BusinessEnum {
     PASSWORD_IS_EMPTY(405, "密码不能为空"),
     USER_CANCEL(406, "该账号已注销"),
     USER_FROZEN(406, "该账号已冻结"),
-    NOT_LOGIN(406, "该用户尚未登录"),
+    NOT_LOGIN(406, "请重新登录"),
     ;
     private Integer code;
     private String desc;
