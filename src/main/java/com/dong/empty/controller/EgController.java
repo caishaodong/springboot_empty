@@ -1,5 +1,11 @@
 package com.dong.empty.controller;
 
+import com.dong.empty.global.ResponseResult;
+import com.dong.empty.global.base.BaseController;
+import com.dong.empty.global.config.aop.permission.Permission;
+import com.dong.empty.global.enums.RoleEnum;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -8,5 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description
  **/
 @RestController
-public class EgController {
+@RequestMapping("/index")
+public class EgController extends BaseController {
+
+    @Permission(role = {RoleEnum.SUPER_ADMIN, RoleEnum.ADMIN})
+    @GetMapping("/permission")
+    public ResponseResult permission() {
+        return success();
+    }
 }

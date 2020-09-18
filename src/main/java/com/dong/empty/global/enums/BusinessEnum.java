@@ -8,6 +8,7 @@ package com.dong.empty.global.enums;
 public enum BusinessEnum {
     SUCCESS(200, "成功"),
     FAIL(500, "失败"),
+    NO_ACCESS_PERMISSION(300, "您没有访问权限"),
     PARAM_ERROR(400, "参数错误"),
 
     USER_NOT_EXIST(401, "用户不存在"),
