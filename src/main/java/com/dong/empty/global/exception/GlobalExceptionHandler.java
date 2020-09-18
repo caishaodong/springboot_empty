@@ -2,7 +2,7 @@ package com.dong.empty.global.exception;
 
 import com.dong.empty.global.ResponseResult;
 import com.dong.empty.global.enums.BusinessEnum;
-import com.dong.empty.global.util.StringUtil;
+import com.dong.empty.global.util.string.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;

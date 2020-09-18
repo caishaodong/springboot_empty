@@ -1,4 +1,4 @@
-package com.dong.empty.global.util;
+package com.dong.empty.global.util.number;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

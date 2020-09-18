@@ -1,4 +1,4 @@
-package com.dong.empty.global.util;
+package com.dong.empty.global.util.string;
 
 import com.alibaba.fastjson.JSONArray;
 
@@ -13,7 +13,7 @@ import java.util.Objects;
  **/
 public class StringUtil {
     public static boolean isBlank(String str) {
-        return "".equals(str) || str == null;
+        return str == null || "".equals(str.trim());
     }
 
     public static boolean isNotBlank(String str) {
