@@ -1,7 +1,7 @@
 package com.dong.empty.global.util.decimal;
 
 
-import com.dong.empty.global.constant.NumberConsts;
+import com.dong.empty.global.constant.NumberConstants;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -35,12 +35,12 @@ public class DecimalUtil {
     }
 
     public static BigDecimal multiply_divide100(BigDecimal b1, BigDecimal b2) {
-        return divide(multiply(b1, b2, 2), NumberConsts.BIG_DECIMAL_100);
+        return divide(multiply(b1, b2, 2), NumberConstants.BIG_DECIMAL_100);
     }
 
 
     public static BigDecimal divide_multiply100(BigDecimal b1, BigDecimal b2) {
-        return multiply(divide(b1, b2), NumberConsts.BIG_DECIMAL_100);
+        return multiply(divide(b1, b2), NumberConstants.BIG_DECIMAL_100);
     }
 
     public static BigDecimal divide(BigDecimal b1, BigDecimal b2) {
@@ -49,7 +49,7 @@ public class DecimalUtil {
 
     public static BigDecimal divide(BigDecimal b1, BigDecimal b2, Integer scale) {
         b2 = ifNullAS0(b2);
-        if (NumberConsts.BIG_DECIMAL_0.compareTo(b2) == 0) {
+        if (NumberConstants.BIG_DECIMAL_0.compareTo(b2) == 0) {
             throw new IllegalArgumentException("The dividend can't be 0");
         }
         return ifNullAS0(b1).divide(b2, scale, BigDecimal.ROUND_HALF_UP);
@@ -72,7 +72,7 @@ public class DecimalUtil {
     }
 
     public static BigDecimal avg(BigDecimal b1, BigDecimal b2, Integer scale) {
-        return ifNullAS0(b1).add(ifNullAS0(b2)).divide(NumberConsts.BIG_DECIMAL_2, scale, BigDecimal.ROUND_HALF_UP);
+        return ifNullAS0(b1).add(ifNullAS0(b2)).divide(NumberConstants.BIG_DECIMAL_2, scale, BigDecimal.ROUND_HALF_UP);
     }
 
 

@@ -2,7 +2,7 @@ package com.dong.empty.global.constant;
 
 import java.math.BigDecimal;
 
-public class NumberConsts {
+public class NumberConstants {
 
 
 

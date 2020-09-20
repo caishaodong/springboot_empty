@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter;
  * @Description
  **/
 @JsonComponent
-public class DateFormatConfig {
+public class LocalDateTimeFormat {
     @Value("${spring.jackson.date-format:yyyy-MM-dd HH:mm:ss}")
     private String pattern;
 

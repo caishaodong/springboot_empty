@@ -18,6 +18,9 @@ public class DecimalFormatUtil {
     }
 
     public static String format(String pattern, BigDecimal decimal) {
+        if (pattern.contains("#.") && decimal.compareTo(BigDecimal.ZERO) > 0 && decimal.compareTo(BigDecimal.ONE) < 1) {
+            pattern = "0.00";
+        }
         DECIMAL_FORMAT.applyPattern(pattern);
         return DECIMAL_FORMAT.format(decimal);
     }
@@ -28,6 +31,8 @@ public class DecimalFormatUtil {
         System.out.println(format("#00.00", new BigDecimal("0012.00")));// 12.00
         System.out.println(format("000.00", new BigDecimal("0012.00")));// 012.00
         System.out.println(format("#.00", new BigDecimal("0012.00")));// 12.00
+        System.out.println(format("#.00", new BigDecimal("0.01")));// .01
         System.out.println(format("0.00", new BigDecimal("0012.00")));// 12.00
+        System.out.println(format("#,###.00", new BigDecimal("234565768.01")));// 234,565,768.01
     }
 }
