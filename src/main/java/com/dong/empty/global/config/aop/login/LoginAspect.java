@@ -1,6 +1,7 @@
 package com.dong.empty.global.config.aop.login;
 
 import com.dong.empty.global.ResponseResult;
+import com.dong.empty.global.constant.Constant;
 import com.dong.empty.global.enums.BusinessEnum;
 import com.dong.empty.global.util.jwt.JwtUtil;
 import com.dong.empty.global.util.string.StringUtil;
@@ -8,12 +9,15 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,14 +26,16 @@ import java.util.Objects;
  * @Date 2020-09-18 15:10
  * @Description 登录校验切面
  **/
-@Component
+@Configuration
 @Aspect
-public class LoginAspect {
+public class LoginAspect implements InitializingBean {
+    @Value("${free.login.uri}")
+    private String FREE_LOGIN_URI;
 
     /**
      * 免登URI集合
      */
-    private static final List<String> FREE_LOGIN_URI_LIST = new ArrayList<>();
+    private List<String> FREE_LOGIN_URI_LIST = new ArrayList<>();
 
     @Pointcut("execution(public * com.dong.empty.controller.*.*(..))")
     public void login() {
@@ -54,7 +60,7 @@ public class LoginAspect {
      * @return
      */
     public Long getUserId(HttpServletRequest request) {
-        return getUserIdFromRequestHeader(request);
+        return getUserIdFromSession(request);
     }
 
     /**
@@ -64,7 +70,7 @@ public class LoginAspect {
      * @return
      */
     public Long getUserIdFromSession(HttpServletRequest request) {
-        return (Long) request.getSession().getAttribute("userId");
+        return (Long) request.getSession().getAttribute(Constant.USER_ID);
     }
 
     /**
@@ -79,7 +85,10 @@ public class LoginAspect {
         return userId;
     }
 
-    static {
-        FREE_LOGIN_URI_LIST.add("/login");
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        if (StringUtil.isNotBlank(FREE_LOGIN_URI)) {
+            FREE_LOGIN_URI_LIST = Arrays.asList(FREE_LOGIN_URI.split(","));
+        }
     }
 }

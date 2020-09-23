@@ -7,6 +7,7 @@ import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.auth0.jwt.interfaces.JWTVerifier;
 import com.dong.empty.domain.entity.User;
+import com.dong.empty.global.constant.Constant;
 import com.dong.empty.global.util.string.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,9 +53,9 @@ public class JwtUtil {
                 // 添加头部
                 .withHeader(map)
                 // 可以将基本信息放到claims中
-                .withClaim("userId", user.getId())
-                .withClaim("userName", user.getUserName())
-                .withClaim("name", user.getName())
+                .withClaim(Constant.USER_ID, user.getId())
+                .withClaim(Constant.USER_NAME, user.getUserName())
+                .withClaim(Constant.NAME, user.getName())
                 // 超时设置,设置过期的日期
                 .withExpiresAt(expireDate)
                 // 签发时间
@@ -95,7 +96,7 @@ public class JwtUtil {
             return null;
         }
         Map<String, Claim> claimMap = verifyToken(token);
-        Long userId = Objects.isNull(claimMap) ? null : claimMap.get("userId").asLong();
+        Long userId = Objects.isNull(claimMap) ? null : claimMap.get(Constant.USER_ID).asLong();
         return userId;
     }
 
@@ -127,13 +128,13 @@ public class JwtUtil {
         for (String key : claimMap.keySet()) {
             Claim claim = claimMap.get(key);
             switch (key) {
-                case "userId":
+                case Constant.USER_ID:
                     user.setId(claim.asLong());
                     break;
-                case "name":
+                case Constant.NAME:
                     user.setName(claim.asString());
                     break;
-                case "userName":
+                case Constant.USER_NAME:
                     user.setUserName(claim.asString());
                     break;
                 case "exp":
