@@ -12,6 +12,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -28,6 +29,7 @@ import java.util.Objects;
  **/
 @Configuration
 @Aspect
+@Order(value = 1)
 public class LoginAspect implements InitializingBean {
     @Value("${free.login.uri}")
     private String FREE_LOGIN_URI;
