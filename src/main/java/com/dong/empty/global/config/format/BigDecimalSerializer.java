@@ -16,7 +16,7 @@ public class BigDecimalSerializer extends JsonSerializer<BigDecimal> {
 
     @Override
     public void serialize(BigDecimal bigDecimal, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
-        jsonGenerator.writeString(new DecimalFormat((bigDecimal.compareTo(BigDecimal.ZERO) > 0 && bigDecimal.compareTo(BigDecimal.ONE) < 1) ? FORMAT_2 : FORMAT_1)
+        jsonGenerator.writeString(new DecimalFormat((bigDecimal.compareTo(BigDecimal.ZERO) >= 0 && bigDecimal.compareTo(BigDecimal.ONE) < 1) ? FORMAT_2 : FORMAT_1)
                 .format(bigDecimal));
     }
 }
