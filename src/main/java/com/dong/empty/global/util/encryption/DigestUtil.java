@@ -20,7 +20,7 @@ import java.security.SecureRandom;
 /**
  * @Author caishaodong
  * @Date 2020-09-18 11:19
- * @Description
+ * @Description 密码加密工具
  **/
 public class DigestUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(DigestUtil.class);
