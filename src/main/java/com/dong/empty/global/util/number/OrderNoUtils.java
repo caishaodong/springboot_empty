@@ -33,7 +33,7 @@ public class OrderNoUtils {
         if (hashCode < 0) {
             hashCode = -hashCode;
         }
-        return OrderNoUtils.FORMATTER.format(LocalDateTime.now()).substring(2, 8) + String.format("%010d", hashCode) + SEQ.getAndIncrement();
+        return OrderNoUtils.FORMATTER.format(LocalDateTime.now()).substring(2, 8) + SEQ.getAndIncrement() + String.format("%010d", hashCode);
     }
 
     static {
@@ -46,6 +46,8 @@ public class OrderNoUtils {
         IntStream.range(0, 100).parallel().forEach(i -> {
             orderNos.add(getSerialNumber());
         });
+
+        Collections.sort(orderNos);
 
         List<String> filterOrderNos = orderNos.stream().distinct().collect(Collectors.toList());
 
