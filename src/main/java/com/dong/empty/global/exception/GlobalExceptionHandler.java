@@ -39,6 +39,11 @@ public class GlobalExceptionHandler {
         return ResponseResult.error(BusinessEnum.PARAM_ERROR.getCode(), errorMessage);
     }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseResult illegalArgumentException(IllegalArgumentException e) {
+        return ResponseResult.error(BusinessEnum.PARAM_ERROR.getCode(), e.getMessage());
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseResult exception(Exception e) {
         LOGGER.error(e.getMessage(), e);

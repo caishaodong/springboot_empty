@@ -5,6 +5,9 @@ import com.dong.empty.global.ResponseResult;
 import com.dong.empty.global.enums.BusinessEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.Assert;
+
+import java.util.Collection;
 
 /**
  * @Author caishaodong
@@ -28,5 +31,45 @@ public class BaseController {
 
     public ResponseResult error(BusinessEnum businessEnum) {
         return ResponseResult.error(businessEnum);
+    }
+
+    /**
+     * 非空校验
+     *
+     * @param params
+     */
+    public static void assertNotEmpty(String... params) {
+        for (int i = 0; i < params.length; i++) {
+            Assert.isTrue(params[i] != null && params[i].trim().length() > 0, BusinessEnum.PARAM_ERROR.getDesc());
+        }
+    }
+
+    /**
+     * 非空校验
+     *
+     * @param collection
+     */
+    public static void assertNotEmpty(Collection collection) {
+        Assert.notEmpty(collection, BusinessEnum.PARAM_ERROR.getDesc());
+    }
+
+    /**
+     * 非空校验
+     *
+     * @param params
+     */
+    public static void assertNotNull(Object... params) {
+        for (int i = 0; i < params.length; i++) {
+            Assert.notNull(params[i], BusinessEnum.PARAM_ERROR.getDesc());
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            assertNotEmpty("", "");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
     }
 }
