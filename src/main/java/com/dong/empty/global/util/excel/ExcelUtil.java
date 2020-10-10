@@ -1,6 +1,7 @@
 package com.dong.empty.global.util.excel;
 
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
+import com.dong.empty.global.util.decimal.DecimalFormatUtil;
 import com.dong.empty.global.util.string.StringUtil;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.math.BigDecimal;
 import java.net.URLEncoder;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -207,10 +209,22 @@ public class ExcelUtil {
      */
     public static void exportToBrowser(List<ExcelSheetPO> excelSheets, String fileName, HttpServletResponse response) throws IOException {
         fileName = URLEncoder.encode(fileName, "UTF-8");
-        response.setHeader("Content-Disposition", "attachment;Filename=" + fileName + ".xlsx");
+        Workbook wb = null;
+
+        if (false) {
+            response.setHeader("Content-Disposition", "attachment;Filename=" + fileName + ".xls");
+            wb = createWorkBook(ExcelVersion.V2003, excelSheets);
+        } else {
+            response.setHeader("Content-Disposition", "attachment;Filename=" + fileName + ".xlsx");
+            response.addHeader("Pargam", "no-cache");
+            response.addHeader("Cache-Control", "no-cache");
+            wb = createWorkBook(ExcelVersion.V2007, excelSheets);
+        }
+
         OutputStream outputStream = response.getOutputStream();
-        Workbook wb = createWorkBook(ExcelVersion.V2007, excelSheets);
+//        wb.setForceFormulaRecalculation(true);// 执行公式
         wb.write(outputStream);
+        outputStream.flush();
         outputStream.close();
     }
 
@@ -230,12 +244,16 @@ public class ExcelUtil {
     }
 
     private static void buildSheetData(Workbook wb, Sheet sheet, ExcelSheetPO excelSheetPO, ExcelVersion version) {
+        // 校验是否需要序号列，如果需要，则进行转换
+        setSortColumn(excelSheetPO);
         // 设置行宽
         setColumnWith(sheet, excelSheetPO);
         // 有需要可以自定义title和header
         createTitle(sheet, excelSheetPO, wb, version);
         createHeader(sheet, excelSheetPO, wb, version);
         createBody(sheet, excelSheetPO, wb, version);
+        // 求和
+        createSumCell(sheet, excelSheetPO, wb, version);
     }
 
     /**
@@ -254,8 +272,15 @@ public class ExcelUtil {
 //            Row row = sheet.createRow(i);
             for (int j = 0; j < values.size() && j < version.getMaxColumn(); j++) {
                 Cell cell = row.createCell(j);
-                cell.setCellStyle(getStyle(STYLE_DATA, wb));
+                CellStyle style = getStyle(STYLE_DATA, wb);
+                cell.setCellStyle(style);
                 cell.setCellValue(values.get(j).toString());
+//                if (values.get(j) instanceof Number) {
+//                    cell.setCellValue(new Double(values.get(j).toString()));
+//                } else {
+//                    cell.setCellValue(values.get(j).toString());
+//
+//                }
             }
         }
 
@@ -314,7 +339,7 @@ public class ExcelUtil {
      */
     private static void setColumnWith(Sheet sheet, ExcelSheetPO excelSheetPO) {
         sheet.setDefaultRowHeight((short) 400);
-        sheet.setDefaultColumnWidth((short) 10);
+        sheet.setDefaultColumnWidth((short) 14);
         Map<Integer, Integer> columnWithMap = excelSheetPO.getColumnWidthMap();
         if (CollectionUtils.isEmpty(columnWithMap)) {
             return;
@@ -322,9 +347,9 @@ public class ExcelUtil {
         Iterator<Map.Entry<Integer, Integer>> iterator = columnWithMap.entrySet().iterator();
         while (iterator.hasNext()) {
             Map.Entry<Integer, Integer> entry = iterator.next();
-            Integer column = entry.getKey();
+            Integer columnIndex = entry.getKey();
             Integer width = entry.getValue();
-            sheet.setColumnWidth(column, width * 256);
+            sheet.setColumnWidth(columnIndex, width * 256);
         }
 
 
@@ -351,6 +376,7 @@ public class ExcelUtil {
         style.setBorderTop(BorderStyle.THIN);
         style.setWrapText(true);
         style.setLocked(false);
+//        style.setDataFormat(wb.createDataFormat().getFormat("@"));
 
         if (STYLE_TITLE.equals(type)) {
             style.setAlignment(HorizontalAlignment.CENTER);
@@ -386,6 +412,102 @@ public class ExcelUtil {
                 return new XSSFWorkbook();
         }
         return null;
+    }
+
+    /**
+     * 增加序号列
+     *
+     * @param excelSheetPO
+     */
+    private static void setSortColumn(ExcelSheetPO excelSheetPO) {
+        Boolean needSort = excelSheetPO.getNeedSort();
+        if (!needSort) {
+            return;
+        }
+        // headers需要增加“序号”列
+        String[] headers = excelSheetPO.getHeaders();
+        if (headers.length > 0) {
+            String[] newHeaders = new String[headers.length + 1];
+            newHeaders[0] = "序号";
+            for (int i = 0; i < headers.length; i++) {
+                newHeaders[i + 1] = headers[i];
+            }
+            excelSheetPO.setHeaders(newHeaders);
+        }
+
+        // dataList需要给每一行数据其实增加递增序号
+        List<List<Object>> dataList = excelSheetPO.getDataList();
+        if (!CollectionUtils.isEmpty(dataList)) {
+            List<List<Object>> newDataList = new ArrayList<>();
+            for (int i = 0; i < dataList.size(); i++) {
+                List<Object> objList = dataList.get(i);
+                List<Object> newObjList = new ArrayList<>(objList.size() + 1);
+                newObjList.add(0, i + 1);
+                for (int m = 0; m < objList.size(); m++) {
+                    newObjList.add(m + 1, objList.get(m));
+                }
+                newDataList.add(i, newObjList);
+            }
+            excelSheetPO.setDataList(newDataList);
+        }
+
+        // columnWidthMap需要给行宽列递增一个列序号
+        Map<Integer, Integer> columnWidthMap = excelSheetPO.getColumnWidthMap();
+        if (!CollectionUtils.isEmpty(columnWidthMap)) {
+            Map<Integer, Integer> newColumnWidthMap = new HashMap<>(columnWidthMap.size());
+            for (Map.Entry<Integer, Integer> entry : columnWidthMap.entrySet()) {
+                newColumnWidthMap.put(entry.getKey() + 1, entry.getValue());
+            }
+            excelSheetPO.setColumnWidthMap(newColumnWidthMap);
+        }
+    }
+
+    /**
+     * 求和
+     *
+     * @param sheet
+     * @param excelSheetPO
+     * @param wb
+     * @param version
+     */
+    private static void createSumCell(Sheet sheet, ExcelSheetPO excelSheetPO, Workbook wb, ExcelVersion version) {
+        List<Map<Integer, Object>> tailList = excelSheetPO.getTailMapList();
+        if (CollectionUtils.isEmpty(tailList)) {
+            return;
+        }
+
+        List<List<Object>> dataList = excelSheetPO.getDataList();
+        int size = dataList.size();
+
+        for (int i = 0; i < tailList.size(); i++) {
+            // 创建行
+            Row row = sheet.createRow(2 + i + size);
+            for (int k = 0; k < dataList.get(0).size() && k < version.getMaxColumn(); k++) {
+                // 创建格子
+                Cell cell = row.createCell(k);
+                cell.setCellStyle(getStyle(STYLE_DATA, wb));
+                // 获取需要填充值的列
+                Map<Integer, Object> columnIndexValueMap = tailList.get(i);
+                Set<Integer> keySet = columnIndexValueMap.keySet();
+                if (keySet.contains(k)) {
+                    Object value = columnIndexValueMap.get(k);
+                    if (value instanceof Number) {
+                        cell.setCellValue(DecimalFormatUtil.format("#.00", new BigDecimal(String.valueOf(value))));
+                    } else {
+                        cell.setCellValue(value.toString());
+                    }
+                } else {
+                    cell.setCellValue("");
+                }
+            }
+        }
+
+//        // 长度转成ABC列
+//        String colString = CellReference.convertNumToColString(column);
+//        // 求和公式
+//        String sumResult = "SUM(" + colString + "3:" + colString + (2 + size) + ")";
+//        row.getCell(column).setCellFormula(sumResult);
+//        row.getCell(column).setCellFormula(row.getCell(column).getCellFormula());
     }
 
 }
