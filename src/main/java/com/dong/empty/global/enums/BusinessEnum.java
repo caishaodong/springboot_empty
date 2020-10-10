@@ -11,6 +11,8 @@ public enum BusinessEnum {
     NO_ACCESS_PERMISSION(300, "您没有访问权限"),
     PARAM_ERROR(400, "参数错误"),
 
+    REQUEST_RATE_LIMIT(201, "网络繁忙，请稍后再试"),
+
     USER_NOT_EXIST(401, "用户不存在"),
     MOBILE_EXIST(402, "该手机号已存在"),
     LOGIN_NAME_OR_PASSWORD_ERROR(403, "用户名或密码错误"),

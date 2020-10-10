@@ -30,9 +30,9 @@ import java.util.Objects;
 @Aspect
 @Order(value = 2)
 public class PermissionAspect {
-    private final static Logger LOGGER = LoggerFactory.getLogger(PermissionAspect.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(PermissionAspect.class);
 
-    @Pointcut("execution(public * com.dong.empty.controller.*.*(..))")
+    @Pointcut(value = "@annotation(com.dong.empty.global.config.aop.permission.Permission)")
     public void permission() {
     }
 
@@ -41,7 +41,7 @@ public class PermissionAspect {
         String className = proceedingJoinPoint.getTarget().getClass().getSimpleName();
         Signature signature = proceedingJoinPoint.getSignature();
         String methodName = signature.getName();
-        LOGGER.info("className:{},methodName:{}", className, methodName);
+        LOGGER.info("PermissionAspect: className:{},methodName:{}", className, methodName);
 
         MethodSignature methodSignature = (MethodSignature) signature;
         Method method = methodSignature.getMethod();
