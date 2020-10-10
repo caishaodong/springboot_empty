@@ -476,20 +476,20 @@ public class ExcelUtil {
             return;
         }
 
-        List<List<Object>> dataList = excelSheetPO.getDataList();
-        int size = dataList.size();
+        int columnCount = excelSheetPO.getHeaders().length;
+        int dataRowCount = excelSheetPO.getDataList().size();
 
         for (int i = 0; i < tailList.size(); i++) {
             // 创建行
-            Row row = sheet.createRow(2 + i + size);
-            for (int k = 0; k < dataList.get(0).size() && k < version.getMaxColumn(); k++) {
+            Row row = sheet.createRow(2 + i + dataRowCount);
+            for (int k = 0; k < columnCount && k < version.getMaxColumn(); k++) {
                 // 创建格子
                 Cell cell = row.createCell(k);
                 cell.setCellStyle(getStyle(STYLE_DATA, wb));
                 // 获取需要填充值的列
                 Map<Integer, Object> columnIndexValueMap = tailList.get(i);
-                Set<Integer> keySet = columnIndexValueMap.keySet();
-                if (keySet.contains(k)) {
+                Set<Integer> columnIndexSet = columnIndexValueMap.keySet();
+                if (columnIndexSet.contains(k)) {
                     Object value = columnIndexValueMap.get(k);
                     if (value instanceof Number) {
                         cell.setCellValue(DecimalFormatUtil.format("#.00", new BigDecimal(String.valueOf(value))));

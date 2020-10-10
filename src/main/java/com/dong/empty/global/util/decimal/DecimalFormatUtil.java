@@ -18,7 +18,7 @@ public class DecimalFormatUtil {
     }
 
     public static String format(String pattern, BigDecimal decimal) {
-        if (pattern.contains("#.") && decimal.compareTo(BigDecimal.ZERO) > 0 && decimal.compareTo(BigDecimal.ONE) < 1) {
+        if (pattern.contains("#.") && decimal.compareTo(BigDecimal.ZERO) >= 0 && decimal.compareTo(BigDecimal.ONE) < 1) {
             pattern = "0.00";
         }
         DECIMAL_FORMAT.applyPattern(pattern);
