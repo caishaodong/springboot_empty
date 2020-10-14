@@ -6,7 +6,6 @@ import com.dong.empty.global.config.aop.permission.Permission;
 import com.dong.empty.global.enums.RoleEnum;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**

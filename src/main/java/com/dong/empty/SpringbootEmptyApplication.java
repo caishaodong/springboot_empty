@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan(basePackages = "com.dong.empty.mapper")
 public class SpringbootEmptyApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringbootEmptyApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringbootEmptyApplication.class, args);
+    }
 
 }

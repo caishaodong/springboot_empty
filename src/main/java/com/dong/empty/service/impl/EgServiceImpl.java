@@ -9,5 +9,5 @@ import org.springframework.stereotype.Service;
  * @Description
  **/
 @Service
-public class EgServcieImpl implements EgService {
+public class EgServiceImpl implements EgService {
 }

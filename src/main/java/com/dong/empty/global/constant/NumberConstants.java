@@ -5,7 +5,6 @@ import java.math.BigDecimal;
 public class NumberConstants {
 
 
-
     public static final BigDecimal BIG_DECIMAL_1_ = new BigDecimal("-1");
 
     public static final BigDecimal BIG_DECIMAL_0_3 = new BigDecimal("0.3");
@@ -34,20 +33,36 @@ public class NumberConstants {
     public static final BigDecimal BIG_DECIMAL_70 = new BigDecimal("70");
 
     public static final BigDecimal BIG_DECIMAL_80 = new BigDecimal("80");
-    /**九十*/
+    /**
+     * 九十
+     */
     public static final BigDecimal BIG_DECIMAL_90 = new BigDecimal("90");
-    /**一百*/
+    /**
+     * 一百
+     */
     public static final BigDecimal BIG_DECIMAL_100 = new BigDecimal("100");
-    /**一百*/
+    /**
+     * 一百
+     */
     public static final BigDecimal BIG_DECIMAL_200 = new BigDecimal("200");
-    /**一千*/
+    /**
+     * 一千
+     */
     public static final BigDecimal BIG_DECIMAL_1000 = new BigDecimal("1000");
-    /**一万*/
+    /**
+     * 一万
+     */
     public static final BigDecimal BIG_DECIMAL_10000 = new BigDecimal("10000");
-    /**十万*/
+    /**
+     * 十万
+     */
     public static final BigDecimal BIG_DECIMAL_100000 = new BigDecimal("100000");
-    /**五十万*/
+    /**
+     * 五十万
+     */
     public static final BigDecimal BIG_DECIMAL_500000 = new BigDecimal("500000");
-    /**一百万*/
+    /**
+     * 一百万
+     */
     public static final BigDecimal BIG_DECIMAL_1000000 = new BigDecimal("1000000");
 }

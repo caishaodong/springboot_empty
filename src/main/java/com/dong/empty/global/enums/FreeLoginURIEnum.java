@@ -5,6 +5,6 @@ package com.dong.empty.global.enums;
  * @Date 2020-09-18 15:22
  * @Description
  **/
-public enum  FreeLoginURIEnum {
+public enum FreeLoginURIEnum {
 
 }

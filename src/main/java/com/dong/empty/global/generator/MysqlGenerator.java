@@ -119,6 +119,5 @@ public class MysqlGenerator {
         autoGenerator.execute();
 
 
-
     }
 }
