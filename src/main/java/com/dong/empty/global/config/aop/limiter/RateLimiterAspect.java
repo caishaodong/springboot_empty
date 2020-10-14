@@ -1,8 +1,8 @@
 package com.dong.empty.global.config.aop.limiter;
 
-import com.dong.empty.global.ResponseResult;
 import com.dong.empty.global.config.aop.permission.PermissionAspect;
 import com.dong.empty.global.enums.BusinessEnum;
+import com.dong.empty.global.exception.BusinessException;
 import com.google.common.util.concurrent.RateLimiter;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -63,7 +62,7 @@ public class RateLimiterAspect {
                 }
                 if (!rateLimiter.tryAcquire(apiRateLimiter.timeout(), apiRateLimiter.timeUnit())) {
                     LOGGER.error("流量访问过大: className:{},methodName:{}", className, methodName);
-                    return ResponseResult.error(BusinessEnum.REQUEST_RATE_LIMIT);
+                    throw new BusinessException(BusinessEnum.REQUEST_RATE_LIMIT);
                 }
 
             }

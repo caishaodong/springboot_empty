@@ -3,6 +3,7 @@ package com.dong.empty.global.config.aop.login;
 import com.dong.empty.global.ResponseResult;
 import com.dong.empty.global.constant.Constant;
 import com.dong.empty.global.enums.BusinessEnum;
+import com.dong.empty.global.exception.BusinessException;
 import com.dong.empty.global.util.jwt.JwtUtil;
 import com.dong.empty.global.util.string.StringUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -50,7 +51,7 @@ public class LoginAspect implements InitializingBean {
 
         Long userId = getUserId(request);
         if (!FREE_LOGIN_URI_LIST.contains(requestURI) && Objects.isNull(userId)) {
-            return ResponseResult.error(BusinessEnum.NOT_LOGIN);
+            throw new BusinessException(BusinessEnum.NOT_LOGIN);
         }
         return proceedingJoinPoint.proceed();
     }

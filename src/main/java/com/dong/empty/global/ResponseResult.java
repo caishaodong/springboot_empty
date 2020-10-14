@@ -1,6 +1,9 @@
 package com.dong.empty.global;
 
 import com.dong.empty.global.enums.BusinessEnum;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import org.springframework.validation.BindingResult;
 
 import java.util.Objects;
@@ -10,16 +13,13 @@ import java.util.Objects;
  * @Date 2020-08-06 14:27
  * @Description
  **/
+@Data
+@Builder
+@AllArgsConstructor
 public class ResponseResult<T> {
     private Integer code;
-    private String errorMsg;
+    private String message;
     private T data;
-
-    public ResponseResult(Integer code, String errorMsg, T data) {
-        this.code = code;
-        this.errorMsg = errorMsg;
-        this.data = data;
-    }
 
     public static ResponseResult success() {
         return new ResponseResult(200, "成功", null);
@@ -47,29 +47,5 @@ public class ResponseResult<T> {
         } else {
             return error();
         }
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    public String getErrorMsg() {
-        return errorMsg;
-    }
-
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-    }
-
-    public Object getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
     }
 }

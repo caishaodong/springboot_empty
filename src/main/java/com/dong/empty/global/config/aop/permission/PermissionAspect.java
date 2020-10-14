@@ -1,9 +1,9 @@
 package com.dong.empty.global.config.aop.permission;
 
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
-import com.dong.empty.global.ResponseResult;
 import com.dong.empty.global.enums.BusinessEnum;
 import com.dong.empty.global.enums.RoleEnum;
+import com.dong.empty.global.exception.BusinessException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
@@ -62,7 +62,7 @@ public class PermissionAspect {
                 if (CollectionUtils.isEmpty(requiredUserPermission)) {
                     // 交集为空，没有访问权限
                     LOGGER.error("没有访问权限");
-                    return ResponseResult.error(BusinessEnum.NO_ACCESS_PERMISSION);
+                    throw new BusinessException(BusinessEnum.NO_ACCESS_PERMISSION);
                 }
             }
         }
