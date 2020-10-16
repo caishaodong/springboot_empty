@@ -2,6 +2,7 @@ package com.dong.empty.global.util.date;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -13,6 +14,17 @@ public class LocalDateTimeUtil {
     public static final String YEAR = "YEAR";
     public static final String MONTH = "MONTH";
     public static final String DAY = "DAY";
+
+    /**
+     * 格式化日期时间
+     *
+     * @param localDateTime
+     * @param pattern
+     * @return
+     */
+    public static String formatDateTimeByPattern(LocalDateTime localDateTime, String pattern) {
+        return DateTimeFormatter.ofPattern(pattern).format(localDateTime);
+    }
 
     /**
      * 获取今日日期（yyyyMMdd）

@@ -5,6 +5,7 @@ import com.dong.empty.global.util.decimal.DecimalFormatUtil;
 import com.dong.empty.global.util.string.StringUtil;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.ss.util.WorkbookUtil;
@@ -12,6 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -43,7 +45,7 @@ public class ExcelUtil {
     /**
      * 存储样式
      */
-    private static HashMap<String, CellStyle> cellStyleMap;
+    private static HashMap<String, CellStyle> cellStyleMap = new HashMap<>();
 
     /**
      * 读取Excel
@@ -189,13 +191,13 @@ public class ExcelUtil {
      */
     public static void createWorkbookAtOutStream(ExcelVersion version, List<ExcelSheetPO> excelSheets,
                                                  OutputStream outStream, boolean closeStream) throws IOException {
-        if (CollectionUtils.isNotEmpty(excelSheets)) {
-            Workbook wb = createWorkBook(version, excelSheets);
-            System.out.println("导出");
-            wb.write(outStream);
-            if (closeStream) {
-                outStream.close();
-            }
+        if (CollectionUtils.isEmpty(excelSheets)) {
+            return;
+        }
+        Workbook wb = createWorkBook(version, excelSheets);
+        wb.write(outStream);
+        if (closeStream) {
+            outStream.close();
         }
     }
 
@@ -211,25 +213,33 @@ public class ExcelUtil {
         fileName = URLEncoder.encode(fileName, "UTF-8");
         Workbook wb = null;
 
-        if (false) {
-            response.setHeader("Content-Disposition", "attachment;Filename=" + fileName + ".xls");
-            wb = createWorkBook(ExcelVersion.V2003, excelSheets);
-        } else {
-            response.setHeader("Content-Disposition", "attachment;Filename=" + fileName + ".xlsx");
-            response.addHeader("Pargam", "no-cache");
-            response.addHeader("Cache-Control", "no-cache");
-            wb = createWorkBook(ExcelVersion.V2007, excelSheets);
+
+        ExcelVersion excelVersion = getExcelVersionByFileName(fileName);
+        if (Objects.isNull(excelVersion)) {
+            throw new RuntimeException("文件格式错误");
+        }
+        switch (excelVersion) {
+            case V2003:
+                response.setHeader("Content-Disposition", "attachment;Filename=" + fileName);
+                wb = createWorkBook(ExcelVersion.V2003, excelSheets);
+                break;
+            case V2007:
+                response.setHeader("Content-Disposition", "attachment;Filename=" + fileName);
+                response.addHeader("Pargam", "no-cache");
+                response.addHeader("Cache-Control", "no-cache");
+                wb = createWorkBook(ExcelVersion.V2007, excelSheets);
+                break;
+            default:
+                throw new RuntimeException("文件格式错误");
         }
 
         OutputStream outputStream = response.getOutputStream();
-//        wb.setForceFormulaRecalculation(true);// 执行公式
         wb.write(outputStream);
         outputStream.flush();
         outputStream.close();
     }
 
     private static Workbook createWorkBook(ExcelVersion version, List<ExcelSheetPO> excelSheets) {
-        cellStyleMap = new HashMap<>();
         Workbook wb = createWorkbook(version);
         for (int i = 0; i < excelSheets.size(); i++) {
             ExcelSheetPO excelSheetPO = excelSheets.get(i);
@@ -252,8 +262,8 @@ public class ExcelUtil {
         createTitle(sheet, excelSheetPO, wb, version);
         createHeader(sheet, excelSheetPO, wb, version);
         createBody(sheet, excelSheetPO, wb, version);
-        // 求和
-        createSumCell(sheet, excelSheetPO, wb, version);
+        // 添加尾行
+        addTail(sheet, excelSheetPO, wb, version);
     }
 
     /**
@@ -463,14 +473,30 @@ public class ExcelUtil {
     }
 
     /**
-     * 求和
+     * 根据文件名称返回Excel版本
+     *
+     * @param fileName
+     * @return
+     */
+    public static ExcelVersion getExcelVersionByFileName(String fileName) {
+        if (fileName.endsWith(".xls")) {
+            return ExcelVersion.V2003;
+        } else if (fileName.endsWith(".xlsx")) {
+            return ExcelVersion.V2007;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * 添加尾行
      *
      * @param sheet
      * @param excelSheetPO
      * @param wb
      * @param version
      */
-    private static void createSumCell(Sheet sheet, ExcelSheetPO excelSheetPO, Workbook wb, ExcelVersion version) {
+    private static void addTail(Sheet sheet, ExcelSheetPO excelSheetPO, Workbook wb, ExcelVersion version) {
         List<Map<Integer, Object>> tailList = excelSheetPO.getTailMapList();
         if (CollectionUtils.isEmpty(tailList)) {
             return;
@@ -510,4 +536,92 @@ public class ExcelUtil {
 //        row.getCell(column).setCellFormula(row.getCell(column).getCellFormula());
     }
 
+    /**
+     * 读取Excel模板，填充数据，导出Excel
+     *
+     * @param templateFilePath
+     * @param map
+     * @param response
+     * @throws Exception
+     */
+    public static void createSheetByTemplate(String templateFilePath, Map<String, String> map, HttpServletResponse response) throws Exception {
+        createSheetByTemplate(templateFilePath, 0, map, response);
+    }
+
+    /**
+     * 读取Excel模板，填充数据，导出Excel
+     *
+     * @param templateFilePath
+     * @param sheetNum         第一个sheet
+     * @param map
+     * @param response
+     * @throws Exception
+     */
+    public static void createSheetByTemplate(String templateFilePath, int sheetNum, Map<String, String> map, HttpServletResponse response) throws Exception {
+        String fileName = templateFilePath.substring(templateFilePath.lastIndexOf("/") + 1);
+        Workbook wb;
+        ExcelVersion excelVersion = getExcelVersionByFileName(fileName);
+        if (Objects.isNull(excelVersion)) {
+            throw new RuntimeException("文件格式错误");
+        }
+        switch (excelVersion) {
+            case V2003:
+                response.setHeader("Content-Disposition", "attachment;Filename=" + fileName);
+                POIFSFileSystem fs = new POIFSFileSystem(new FileInputStream(templateFilePath));
+                wb = new HSSFWorkbook(fs);
+                break;
+            case V2007:
+                response.setHeader("Content-Disposition", "attachment;Filename=" + fileName);
+                response.addHeader("Pargam", "no-cache");
+                response.addHeader("Cache-Control", "no-cache");
+                wb = new XSSFWorkbook(new FileInputStream(templateFilePath));
+                break;
+            default:
+                throw new RuntimeException("文件格式错误");
+        }
+
+        // 替换模板数据
+        replaceTemplateData(wb, sheetNum, map);
+
+        OutputStream outputStream = response.getOutputStream();
+        wb.write(outputStream);
+        outputStream.flush();
+        outputStream.close();
+    }
+
+    /**
+     * 替换模板数据
+     *
+     * @param wb
+     * @param sheetNum
+     * @param map
+     */
+    public static void replaceTemplateData(Workbook wb, int sheetNum, Map<String, String> map) {
+        // 获取第一个sheet里的内容
+        Sheet sheet = wb.getSheetAt(sheetNum);
+        if (CollectionUtils.isEmpty(map)) {
+            return;
+        }
+        // 该sheet页里最多有几行内容
+        int rowNum = sheet.getLastRowNum();
+        // 循环每一行
+        for (int i = 0; i < rowNum; i++) {
+            Row row = sheet.getRow(i);
+            // 该行存在几列
+            int colNum = row.getLastCellNum();
+            // 循环每一列
+            for (int j = 0; j < colNum; j++) {
+                Cell cell = row.getCell((short) j);
+                // 获取单元格内容  （行列定位）
+                String str = cell.getStringCellValue();
+                // 替换excel中对应的键的值（注意，excel模板中的要替换的值必须跟map中的key值对应，不然替换不成功）
+                if (map.keySet().contains(str)) {
+                    //写入单元格内容
+                    cell.setCellStyle(getStyle(STYLE_DATA, wb));
+                    // 替换单元格内容
+                    cell.setCellValue(map.get(str));
+                }
+            }
+        }
+    }
 }
