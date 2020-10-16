@@ -1,6 +1,8 @@
 package com.dong.empty.global.util.file.download.zip;
 
-import org.apache.poi.util.IOUtils;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +19,7 @@ public class ZipDownLoadUtil {
     public static void download(HttpServletRequest request, HttpServletResponse response) {
         String downloadName = "下载文件名称.zip";
         // 下载文件名乱码问题解决
-        downloadName = BrowserCharCodeUtils.browserCharCodeFun(request, downloadName);
+//        downloadName = BrowserCharCodeUtils.browserCharCodeFun(request, downloadName);
 
         // 将文件进行打包下载
         try {
@@ -42,7 +44,7 @@ public class ZipDownLoadUtil {
         // 将目标文件打包成zip导出
         File file = new File(srcSource);
         a(zip, file, "");
-        IOUtils.closeQuietly(zip);
+        zip.close();
         return outputStream.toByteArray();
     }
 
@@ -65,8 +67,8 @@ public class ZipDownLoadUtil {
             BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file));
             ZipEntry entry = new ZipEntry(dir);
             zip.putNextEntry(entry);
-            zip.write(org.apache.commons.io.FileUtils.readFileToByteArray(file));
-            IOUtils.closeQuietly(bis);
+            zip.write(FileUtils.readFileToByteArray(file));
+            bis.close();
             zip.flush();
             zip.closeEntry();
         }
