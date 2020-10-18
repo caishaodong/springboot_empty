@@ -7,6 +7,7 @@ import org.apache.commons.io.IOUtils;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.net.URLEncoder;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -18,16 +19,15 @@ import java.util.zip.ZipOutputStream;
 public class ZipDownLoadUtil {
     public static void download(HttpServletRequest request, HttpServletResponse response) {
         String downloadName = "下载文件名称.zip";
-        // 下载文件名乱码问题解决
-//        downloadName = BrowserCharCodeUtils.browserCharCodeFun(request, downloadName);
+        String filePath = "";
 
         // 将文件进行打包下载
         try {
             OutputStream out = response.getOutputStream();
             // 服务器存储地址
-            byte[] data = createZip("/fileStorage/download");
+            byte[] data = createZip(filePath);
             response.reset();
-            response.setHeader("Content-Disposition", "attachment;fileName=" + downloadName);
+            response.setHeader("Content-Disposition", "attachment;fileName=" + URLEncoder.encode(downloadName, "UTF-8"));
             response.addHeader("Content-Length", "" + data.length);
             response.setContentType("application/octet-stream;charset=UTF-8");
             IOUtils.write(data, out);
@@ -38,11 +38,11 @@ public class ZipDownLoadUtil {
         }
     }
 
-    public static byte[] createZip(String srcSource) throws Exception {
+    public static byte[] createZip(String filePath) throws Exception {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         ZipOutputStream zip = new ZipOutputStream(outputStream);
         // 将目标文件打包成zip导出
-        File file = new File(srcSource);
+        File file = new File(filePath);
         a(zip, file, "");
         zip.close();
         return outputStream.toByteArray();
