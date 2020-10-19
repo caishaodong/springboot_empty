@@ -1,76 +1,149 @@
 package com.dong.empty.global.util.file.download.zip;
 
-
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
+import com.dong.empty.global.util.string.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.net.URLEncoder;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
  * @Author caishaodong
- * @Date 2020-10-16 18:03
- * @Description
+ * @Date 2020-10-19 15:43
+ * @Description zip工具类
  **/
 public class ZipDownLoadUtil {
-    public static void download(HttpServletRequest request, HttpServletResponse response) {
-        String downloadName = "下载文件名称.zip";
-        String filePath = "";
+    private static Logger LOGGER = LoggerFactory.getLogger(ZipDownLoadUtil.class);
 
-        // 将文件进行打包下载
+    /**
+     * 多个网络文件下载为zip文件
+     *
+     * @param urls
+     * @param request
+     * @param response
+     * @throws Exception
+     */
+    public static void download(String[] urls, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        // 设置压缩包的名字
+        String zipName = System.currentTimeMillis() + ".zip";
+        zipName = "这是我自定义的名称.zip";
+
+        ZipOutputStream zos = null;
+        DataOutputStream os = null;
         try {
-            OutputStream out = response.getOutputStream();
-            // 服务器存储地址
-            byte[] data = createZip(filePath);
+            // 响应头的设置
             response.reset();
-            response.setHeader("Content-Disposition", "attachment;fileName=" + URLEncoder.encode(downloadName, "UTF-8"));
-            response.addHeader("Content-Length", "" + data.length);
             response.setContentType("application/octet-stream;charset=UTF-8");
-            IOUtils.write(data, out);
-            out.flush();
-            out.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+            response.setHeader("Content-Disposition", "attachment;fileName=" + URLEncoder.encode(zipName, "UTF-8"));
 
-    public static byte[] createZip(String filePath) throws Exception {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        ZipOutputStream zip = new ZipOutputStream(outputStream);
-        // 将目标文件打包成zip导出
-        File file = new File(filePath);
-        a(zip, file, "");
-        zip.close();
-        return outputStream.toByteArray();
-    }
+            // 设置压缩流：直接写入response，实现边压缩边下载
+            zos = new ZipOutputStream(new BufferedOutputStream(response.getOutputStream()));
+            // 设置压缩方法
+            zos.setMethod(ZipOutputStream.DEFLATED);
 
-    public static void a(ZipOutputStream zip, File file, String dir) throws Exception {
-        // 如果当前的是文件夹，则进行进一步处理
-        if (file.isDirectory()) {
-            // 得到文件列表信息
-            File[] files = file.listFiles();
-            // 将文件夹添加到下一级打包目录
-            zip.putNextEntry(new ZipEntry(dir + "/"));
-            dir = dir.length() == 0 ? "" : dir + "/";
-            // 循环将文件夹中的文件打包
-            for (int i = 0; i < files.length; i++) {
-                //递归处理
-                a(zip, files[i], dir + files[i].getName());
+            // 循环将文件写入压缩流
+
+            for (int i = 0; i < urls.length; i++) {
+                String fileName = getNameNoGarbled(request, getFileNameByUrl(urls[i]));
+                LOGGER.info("fileName:" + fileName);
+
+                File file = getFileByUrl(urls[i], fileName);
+                // 添加ZipEntry，并在ZipEntry中写入文件流
+                zos.putNextEntry(new ZipEntry(fileName));
+                os = new DataOutputStream(zos);
+                InputStream is = new FileInputStream(file);
+                byte[] b = new byte[1024];
+                int length = 0;
+                while ((length = is.read(b)) != -1) {
+                    os.write(b, 0, length);
+                }
+                is.close();
+                zos.closeEntry();
             }
-        } else {
-            // 当前的是文件，打包处理
-            // 文件输入流
-            BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file));
-            ZipEntry entry = new ZipEntry(dir);
-            zip.putNextEntry(entry);
-            zip.write(FileUtils.readFileToByteArray(file));
-            bis.close();
-            zip.flush();
-            zip.closeEntry();
+        } finally {
+            os.flush();
+            if (os != null) {
+                os.close();
+            }
+            if (zos != null) {
+                zos.close();
+            }
         }
+    }
+
+    /**
+     * url转file
+     *
+     * @param fileUrl
+     * @param suffix
+     * @return
+     */
+    public static File getFileByUrl(String fileUrl, String suffix) throws IOException {
+        ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+        BufferedOutputStream stream = null;
+        InputStream inputStream = null;
+        File file;
+        try {
+            URL imageUrl = new URL(fileUrl);
+            HttpURLConnection conn = (HttpURLConnection) imageUrl.openConnection();
+            conn.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
+            inputStream = conn.getInputStream();
+            byte[] buffer = new byte[1024];
+            int len = 0;
+            while ((len = inputStream.read(buffer)) != -1) {
+                outStream.write(buffer, 0, len);
+            }
+            file = File.createTempFile("file", suffix);
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            stream = new BufferedOutputStream(fileOutputStream);
+            stream.write(outStream.toByteArray());
+        } finally {
+            if (inputStream != null) {
+                inputStream.close();
+            }
+            if (stream != null) {
+                stream.close();
+            }
+            if (outStream != null) {
+                outStream.close();
+            }
+        }
+        return file;
+    }
+
+    /**
+     * 根据url获取文件名
+     *
+     * @param url
+     * @return
+     */
+    public static String getFileNameByUrl(String url) {
+        return StringUtil.isBlank(url) ? "" : url.substring(url.lastIndexOf("/") + 1);
+    }
+
+    /**
+     * 解决不同浏览器压缩包名字含有中文时乱码的问题
+     *
+     * @param fileName
+     * @return
+     */
+    public static String getNameNoGarbled(HttpServletRequest request, String fileName) throws Exception {
+        String agent = request.getHeader("USER-AGENT");
+        // 解决不同浏览器压缩包名字含有中文时乱码的问题
+        if (agent.contains("MSIE") || agent.contains("Trident")) {
+            fileName = URLEncoder.encode(fileName, "UTF-8");
+        }
+        return fileName;
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println(getFileNameByUrl("dsfdgjgfsssdf.pdf"));
     }
 }
