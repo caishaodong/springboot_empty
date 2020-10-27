@@ -5,6 +5,8 @@ import com.dong.empty.global.constant.NumberConstants;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * @Author caishaodong
@@ -215,5 +217,27 @@ public class DecimalUtil {
         }
     }
 
+
+    /**
+     * 根据类型获取最大值和最小值
+     *
+     * @param type max:表示获取最大值，min:表示获取最小值
+     * @param list
+     * @return
+     */
+    public static BigDecimal getLimitValue(String type, List<BigDecimal> list) {
+        BigDecimal result = null;
+        switch (type) {
+            case "max":
+                result = list.stream().filter(value -> value != null).distinct().max(Comparator.naturalOrder()).get();
+                break;
+            case "min":
+                result = list.stream().filter(value -> value != null).distinct().min(Comparator.naturalOrder()).get();
+                break;
+            default:
+
+        }
+        return result;
+    }
 
 }
