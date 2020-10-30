@@ -284,7 +284,7 @@ public class ExcelUtil {
                 Cell cell = row.createCell(j);
                 CellStyle style = getStyle(STYLE_DATA, wb);
                 cell.setCellStyle(style);
-                cell.setCellValue(values.get(j).toString());
+                cell.setCellValue(Objects.nonNull(values.get(j)) ? values.get(j).toString() : "");
 //                if (values.get(j) instanceof Number) {
 //                    cell.setCellValue(new Double(values.get(j).toString()));
 //                } else {
