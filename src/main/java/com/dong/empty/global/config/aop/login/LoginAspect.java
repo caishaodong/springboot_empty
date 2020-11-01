@@ -1,6 +1,5 @@
 package com.dong.empty.global.config.aop.login;
 
-import com.dong.empty.global.ResponseResult;
 import com.dong.empty.global.constant.Constant;
 import com.dong.empty.global.enums.BusinessEnum;
 import com.dong.empty.global.exception.BusinessException;
@@ -83,7 +82,7 @@ public class LoginAspect implements InitializingBean {
      * @return
      */
     public Long getUserIdFromRequestHeader(HttpServletRequest request) {
-        String token = request.getHeader("Authorization");
+        String token = request.getHeader(JwtUtil.TOKEN_HEADER);
         Long userId = StringUtil.isBlank(token) ? null : JwtUtil.getUserIdByToken(token);
         return userId;
     }

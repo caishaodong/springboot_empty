@@ -26,6 +26,10 @@ import java.util.Objects;
 public class JwtUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtUtil.class);
     /**
+     * token请求头
+     */
+    public static final String TOKEN_HEADER = "Authorization";
+    /**
      * 密钥
      */
     private static final String SECRET = "my_secret";
