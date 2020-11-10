@@ -1,0 +1,14 @@
+2020-11-10 23:36:27.948 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on LAPTOP-8OUMTO0R with PID 9592 (D:\install\Java\WorkTask\IDEA\springboot_empty\target\classes started by 半世晨晓&楠 in D:\install\Java\WorkTask\IDEA\springboot_empty)
+2020-11-10 23:36:27.952 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-11-10 23:36:30.430 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-11-10 23:36:30.446 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-11-10 23:36:30.450 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-10 23:36:30.450 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-11-10 23:36:30.643 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-10 23:36:30.644 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2581 ms
+2020-11-10 23:36:31.149 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-10 23:36:31.278 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-11-10 23:36:31.736 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-11-10 23:36:32.545 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-11-10 23:36:32.613 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-11-10 23:36:32.643 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 5.326 seconds (JVM running for 7.063)

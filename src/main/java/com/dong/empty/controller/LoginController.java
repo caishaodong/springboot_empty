@@ -34,7 +34,6 @@ public class LoginController extends BaseController {
         request.getSession().setAttribute(Constant.USER_ID, 0L);
         User user = new User();
         user.setId(1L);
-        user.setUserName("张三");
         user.setName("");
         String token = JwtUtil.createToken(user);
         return success(token);

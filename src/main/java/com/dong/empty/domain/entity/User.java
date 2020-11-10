@@ -1,17 +1,86 @@
 package com.dong.empty.domain.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
+import java.io.Serializable;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
- * @Author caishaodong
- * @Date 2020-09-18 16:25
- * @Description
- **/
+ * <p>
+ * 用户表
+ * </p>
+ *
+ * @author caishaodong
+ * @since 2020-11-10
+ */
 @Data
-public class User {
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+public class User extends Model<User> {
+
+    private static final long serialVersionUID = 1L;
+
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
-    private String userName;
+
+    /**
+     * 姓名
+     */
     private String name;
+
+    /**
+     * 手机号
+     */
+    private String mobile;
+
+    /**
+     * 邮箱
+     */
+    private String email;
+
+    /**
+     * 密码
+     */
     private String password;
-    private String salt;
+
+    /**
+     * 年龄
+     */
+    private Integer age;
+
+    /**
+     * 住址
+     */
+    private String address;
+
+    /**
+     * 状态（0：正常，1：注销，2：冻结）
+     */
+    private Boolean status;
+
+    /**
+     * 是否删除（0：正常，1：删除）
+     */
+    private Boolean isDeleted;
+
+    /**
+     * 创建时间
+     */
+    private LocalDateTime gmtCreate;
+
+    /**
+     * 修改时间
+     */
+    private LocalDateTime gmtModified;
+
+
+    @Override
+    protected Serializable pkVal() {
+        return this.id;
+    }
+
 }
