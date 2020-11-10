@@ -20,7 +20,7 @@ import java.util.List;
  **/
 public class MysqlGenerator {
 
-    private static final String TABLE_NAME = "user";
+    private static final String TABLE_NAME = "sys_user";
 
     public static void main(String[] args) {
         // 代码生成器
