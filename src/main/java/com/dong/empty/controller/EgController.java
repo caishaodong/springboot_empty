@@ -27,4 +27,9 @@ public class EgController extends BaseController {
     public Long returnValue() {
         return 3L;
     }
+
+    @GetMapping("/test")
+    public Long test() {
+        return 3L;
+    }
 }

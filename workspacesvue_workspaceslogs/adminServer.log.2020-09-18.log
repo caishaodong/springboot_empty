@@ -1,0 +1,670 @@
+2020-09-18 14:45:54.466 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 12796 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 14:45:54.469 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 14:45:56.191 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 14:45:56.205 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:45:56.206 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 14:45:56.207 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 14:45:56.372 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 14:45:56.372 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1790 ms
+2020-09-18 14:45:56.805 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:45:57.265 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 14:46:00.524 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 14:46:00.887 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:46:00.918 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 14:46:00.935 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 7.354 seconds (JVM running for 9.75)
+2020-09-18 14:46:13.842 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 14:46:13.848 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 14:46:13.848 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:46:22.155 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 240 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 14:46:22.161 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 14:46:23.674 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 14:46:23.731 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:46:23.732 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 14:46:23.732 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 14:46:23.862 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 14:46:23.863 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1632 ms
+2020-09-18 14:46:24.229 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:46:24.441 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 14:46:27.065 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 14:46:27.433 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:46:27.461 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 14:46:27.473 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 6.206 seconds (JVM running for 9.437)
+2020-09-18 14:46:40.277 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 14:46:40.282 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 14:46:40.282 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:46:48.088 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 15068 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 14:46:48.093 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 14:46:49.562 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 14:46:49.571 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:46:49.571 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 14:46:49.572 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 14:46:49.688 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 14:46:49.688 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1448 ms
+2020-09-18 14:46:49.966 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:46:50.165 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 14:46:51.885 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 14:46:52.192 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:46:52.220 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 14:46:52.238 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.896 seconds (JVM running for 7.545)
+2020-09-18 14:47:02.823 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 14:47:02.823 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 14:47:02.829 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-09-18 14:47:02.844 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 14:47:02.859 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 14:47:02.860 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:
+2020-09-18 14:47:02.965 [http-nio-9092-exec-2] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/favicon.ico
+2020-09-18 14:47:02.974 [http-nio-9092-exec-2] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/error
+2020-09-18 14:47:13.957 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 14:47:13.962 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 14:47:13.962 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:47:20.158 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 14164 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 14:47:20.162 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 14:47:21.473 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 14:47:21.481 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:47:21.482 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 14:47:21.482 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 14:47:21.593 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 14:47:21.593 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1357 ms
+2020-09-18 14:47:21.841 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:47:22.011 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 14:47:23.546 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 14:47:23.804 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:47:23.826 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 14:47:23.837 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.303 seconds (JVM running for 6.414)
+2020-09-18 14:47:26.550 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 14:47:26.550 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 14:47:26.559 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2020-09-18 14:47:26.572 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 14:47:26.580 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 14:47:26.582 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:admin
+2020-09-18 14:47:26.583 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 当前用户的权限:[]
+2020-09-18 14:47:26.586 [http-nio-9092-exec-1] ERROR c.d.empty.global.exception.GlobalExceptionHandler - null
+java.lang.UnsupportedOperationException: null
+	at java.util.AbstractList.remove(AbstractList.java:161)
+	at java.util.AbstractList$Itr.remove(AbstractList.java:374)
+	at java.util.AbstractCollection.retainAll(AbstractCollection.java:410)
+	at com.dong.empty.global.config.aop.permission.PermissionAspect.around(PermissionAspect.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.dong.empty.controller.EgController$$EnhancerBySpringCGLIB$$5583518e.permission(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-18 14:47:47.162 [http-nio-9092-exec-2] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 14:47:47.162 [http-nio-9092-exec-2] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 14:47:47.162 [http-nio-9092-exec-2] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:admin
+2020-09-18 14:47:56.654 [http-nio-9092-exec-2] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 当前用户的权限:[]
+2020-09-18 14:48:08.827 [http-nio-9092-exec-2] ERROR c.d.empty.global.exception.GlobalExceptionHandler - null
+java.lang.UnsupportedOperationException: null
+	at java.util.AbstractList.remove(AbstractList.java:161)
+	at java.util.AbstractList$Itr.remove(AbstractList.java:374)
+	at java.util.AbstractCollection.retainAll(AbstractCollection.java:410)
+	at com.dong.empty.global.config.aop.permission.PermissionAspect.around(PermissionAspect.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.dong.empty.controller.EgController$$EnhancerBySpringCGLIB$$5583518e.permission(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-18 14:49:21.372 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 14:49:21.377 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 14:49:21.378 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:49:27.621 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 7084 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 14:49:27.623 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 14:49:28.951 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 14:49:28.960 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:49:28.960 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 14:49:28.960 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 14:49:29.074 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 14:49:29.074 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1388 ms
+2020-09-18 14:49:29.313 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:49:29.480 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 14:49:30.989 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 14:49:31.247 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:49:31.268 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 14:49:31.277 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.25 seconds (JVM running for 6.308)
+2020-09-18 14:49:38.419 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 14:49:38.419 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 14:49:38.425 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-09-18 14:49:38.439 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 14:49:38.449 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 14:49:38.450 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:admin
+2020-09-18 14:49:42.886 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 当前用户的权限:[]
+2020-09-18 14:49:50.979 [http-nio-9092-exec-1] ERROR c.d.e.g.config.aop.permission.PermissionAspect - 没有访问权限
+2020-09-18 14:51:17.599 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 14:51:17.603 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 14:51:17.603 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:51:23.852 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 9228 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 14:51:23.855 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 14:51:25.074 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 14:51:25.082 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:51:25.083 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 14:51:25.083 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 14:51:25.196 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 14:51:25.196 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1272 ms
+2020-09-18 14:51:25.436 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:51:25.604 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 14:51:27.098 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 14:51:27.361 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:51:27.381 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 14:51:27.391 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.151 seconds (JVM running for 6.264)
+2020-09-18 14:51:29.702 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 14:51:29.702 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 14:51:29.709 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-09-18 14:51:29.721 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 14:51:29.730 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 14:51:29.731 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:admin
+2020-09-18 14:51:29.731 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 当前用户的权限:[admin]
+2020-09-18 14:51:39.972 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 14:51:39.975 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 14:51:39.976 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:51:47.330 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 18664 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 14:51:47.333 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 14:51:48.544 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 14:51:48.552 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:51:48.552 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 14:51:48.552 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 14:51:48.666 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 14:51:48.667 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1272 ms
+2020-09-18 14:51:48.901 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:51:49.068 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 14:51:50.571 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 14:51:50.838 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:51:50.860 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 14:51:50.871 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.161 seconds (JVM running for 6.211)
+2020-09-18 14:51:53.150 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 14:51:53.151 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 14:51:53.158 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2020-09-18 14:51:53.173 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 14:51:53.185 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 14:51:53.186 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:admin,aaa
+2020-09-18 14:51:53.187 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 当前用户的权限:[admin]
+2020-09-18 14:52:03.629 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 14:52:03.632 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 14:52:03.633 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:52:10.003 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 16608 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 14:52:10.007 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 14:52:11.244 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 14:52:11.253 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:52:11.253 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 14:52:11.253 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 14:52:11.362 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 14:52:11.362 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1300 ms
+2020-09-18 14:52:11.602 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:52:11.767 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 14:52:13.268 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 14:52:13.554 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:52:13.575 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 14:52:13.584 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.192 seconds (JVM running for 6.279)
+2020-09-18 14:52:16.325 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 14:52:16.326 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 14:52:16.334 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-09-18 14:52:16.348 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 14:52:16.359 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 14:52:16.360 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:admin,aaa
+2020-09-18 14:52:20.796 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 当前用户的权限:[admin, bbb]
+2020-09-18 14:52:35.117 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 14:52:35.120 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 14:52:35.121 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:52:41.461 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 10224 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 14:52:41.464 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 14:52:42.703 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 14:52:42.711 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:52:42.711 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 14:52:42.712 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 14:52:42.822 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 14:52:42.822 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1294 ms
+2020-09-18 14:52:43.102 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:52:43.279 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 14:52:44.807 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 14:52:45.048 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:52:45.069 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 14:52:45.080 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.235 seconds (JVM running for 6.367)
+2020-09-18 14:52:47.926 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 14:52:47.926 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 14:52:47.932 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-09-18 14:52:47.945 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 14:52:47.955 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 14:52:47.956 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:admin,aaa
+2020-09-18 14:52:50.681 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 当前用户的权限:[bbb]
+2020-09-18 14:52:50.683 [http-nio-9092-exec-1] ERROR c.d.e.g.config.aop.permission.PermissionAspect - 没有访问权限
+2020-09-18 14:53:01.412 [http-nio-9092-exec-2] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 14:53:01.413 [http-nio-9092-exec-2] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 14:53:01.413 [http-nio-9092-exec-2] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:admin,aaa
+2020-09-18 14:53:11.507 [http-nio-9092-exec-2] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 当前用户的权限:[bbb]
+2020-09-18 14:53:11.507 [http-nio-9092-exec-2] ERROR c.d.e.g.config.aop.permission.PermissionAspect - 没有访问权限
+2020-09-18 14:59:45.428 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 14:59:45.433 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 14:59:45.433 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:59:52.033 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 5076 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 14:59:52.037 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 14:59:53.366 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 14:59:53.374 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:59:53.375 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 14:59:53.375 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 14:59:53.483 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 14:59:53.483 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1386 ms
+2020-09-18 14:59:53.724 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 14:59:53.912 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 14:59:55.430 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 14:59:55.686 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 14:59:55.708 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 14:59:55.719 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.309 seconds (JVM running for 6.463)
+2020-09-18 14:59:59.543 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 14:59:59.543 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 14:59:59.549 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-09-18 14:59:59.562 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 14:59:59.571 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 14:59:59.572 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:SUPER_ADMIN
+2020-09-18 14:59:59.572 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 当前用户的权限:[ADMIN]
+2020-09-18 15:00:32.703 [http-nio-9092-exec-3] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 15:00:32.704 [http-nio-9092-exec-3] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 15:00:45.925 [http-nio-9092-exec-3] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:SUPER_ADMIN
+2020-09-18 15:01:02.978 [http-nio-9092-exec-3] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 当前用户的权限:[ADMIN]
+2020-09-18 15:02:04.537 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 15:02:04.542 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 15:02:04.543 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:02:11.011 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 11812 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 15:02:11.017 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 15:02:12.277 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 15:02:12.286 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:02:12.286 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 15:02:12.286 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 15:02:12.407 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 15:02:12.407 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1325 ms
+2020-09-18 15:02:12.650 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:02:12.818 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 15:02:14.366 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 15:02:14.621 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:02:14.644 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 15:02:14.655 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.264 seconds (JVM running for 6.409)
+2020-09-18 15:02:19.273 [http-nio-9092-exec-3] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 15:02:19.273 [http-nio-9092-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 15:02:19.279 [http-nio-9092-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-09-18 15:02:19.291 [http-nio-9092-exec-3] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 15:02:19.300 [http-nio-9092-exec-3] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 15:02:19.301 [http-nio-9092-exec-3] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:SUPER_ADMIN
+2020-09-18 15:02:19.301 [http-nio-9092-exec-3] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 当前用户的权限:[ADMIN, OTHER]
+2020-09-18 15:02:46.079 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 15:02:46.083 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 15:02:46.084 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:02:52.292 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 12108 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 15:02:52.296 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 15:02:53.496 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 15:02:53.504 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:02:53.504 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 15:02:53.504 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 15:02:53.617 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 15:02:53.617 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1260 ms
+2020-09-18 15:02:53.867 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:02:54.052 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 15:02:55.578 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 15:02:55.835 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:02:55.855 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 15:02:55.864 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.203 seconds (JVM running for 6.27)
+2020-09-18 15:02:58.453 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 15:02:58.453 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 15:02:58.459 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-09-18 15:02:58.471 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 15:02:58.481 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 15:02:58.482 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:[SUPER_ADMIN, ADMIN]
+2020-09-18 15:02:58.482 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 当前用户的权限:[ADMIN, OTHER]
+2020-09-18 15:03:12.773 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 15:03:12.776 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 15:03:12.777 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:03:19.186 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 1312 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 15:03:19.190 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 15:03:20.408 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 15:03:20.416 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:03:20.416 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 15:03:20.417 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 15:03:20.527 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 15:03:20.527 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1270 ms
+2020-09-18 15:03:20.771 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:03:20.941 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 15:03:22.511 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 15:03:22.771 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:03:22.791 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 15:03:22.803 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.221 seconds (JVM running for 6.28)
+2020-09-18 15:03:25.591 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 15:03:25.591 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 15:03:25.598 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2020-09-18 15:03:25.610 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/index/permission
+2020-09-18 15:03:25.620 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:EgController,methodName:permission
+2020-09-18 15:03:25.621 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 请求当前接口需要的用户角色:[SUPER_ADMIN, ADMIN]
+2020-09-18 15:03:25.621 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - 当前用户的权限:[OTHER]
+2020-09-18 15:03:25.622 [http-nio-9092-exec-1] ERROR c.d.e.g.config.aop.permission.PermissionAspect - 没有访问权限
+2020-09-18 15:19:29.665 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 15:19:29.669 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 15:19:29.670 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:19:36.727 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 2816 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 15:19:36.731 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 15:19:38.094 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 15:19:38.102 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:19:38.103 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 15:19:38.103 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 15:19:38.217 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 15:19:38.217 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1427 ms
+2020-09-18 15:19:38.481 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:19:38.653 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 15:19:40.223 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 15:19:40.518 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:19:40.539 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 15:19:40.549 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.477 seconds (JVM running for 6.798)
+2020-09-18 15:20:02.907 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 15:20:02.907 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 15:20:02.914 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2020-09-18 15:20:02.930 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/login
+2020-09-18 15:20:02.939 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/error
+2020-09-18 15:20:14.592 [http-nio-9092-exec-2] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/error
+2020-09-18 15:20:34.284 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 15:20:34.289 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 15:20:34.289 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:20:40.130 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 12732 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 15:20:40.134 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 15:20:41.353 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 15:20:41.361 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:20:41.361 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 15:20:41.361 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 15:20:41.467 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 15:20:41.467 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1275 ms
+2020-09-18 15:20:41.725 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:20:41.896 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 15:20:43.486 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 15:20:43.801 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:20:43.824 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 15:20:43.834 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.299 seconds (JVM running for 6.291)
+2020-09-18 15:20:45.221 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 15:20:45.221 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 15:20:45.229 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-09-18 15:20:45.243 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/login
+2020-09-18 15:21:20.418 [http-nio-9092-exec-2] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/login
+2020-09-18 15:25:57.746 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 15:25:57.751 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 15:25:57.751 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:26:03.930 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 9124 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 15:26:03.935 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 15:26:05.184 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 15:26:05.192 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:26:05.193 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 15:26:05.193 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 15:26:05.301 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 15:26:05.302 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1257 ms
+2020-09-18 15:26:05.610 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:26:05.789 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 15:26:07.296 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 15:26:07.606 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:26:07.628 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 15:26:07.636 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.322 seconds (JVM running for 6.541)
+2020-09-18 15:26:15.236 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 15:26:15.236 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 15:26:15.244 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-09-18 15:26:15.256 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/login
+2020-09-18 15:54:08.988 [http-nio-9092-exec-5] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/login
+2020-09-18 15:54:16.839 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 15:54:16.843 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 15:54:16.843 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:54:23.057 [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2020-09-18 15:54:23.154 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 16604 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 15:54:23.156 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 15:54:24.437 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 15:54:24.444 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:54:24.445 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 15:54:24.445 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 15:54:24.553 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 15:54:24.553 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1347 ms
+2020-09-18 15:54:24.804 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:54:24.973 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 15:54:26.437 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 15:54:26.722 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:54:26.743 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 15:54:26.751 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.17 seconds (JVM running for 6.304)
+2020-09-18 15:54:29.322 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 15:54:29.322 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 15:54:29.329 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2020-09-18 15:54:29.343 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/login
+2020-09-18 15:54:29.359 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:LoginController,methodName:login
+2020-09-18 15:55:25.998 [http-nio-9092-exec-2] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 15:55:26.006 [http-nio-9092-exec-2] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/error
+2020-09-18 15:55:32.022 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 15:55:32.024 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 15:55:32.025 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:55:37.873 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 5428 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 15:55:37.876 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 15:55:39.108 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 15:55:39.117 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:55:39.117 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 15:55:39.117 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 15:55:39.229 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 15:55:39.229 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1286 ms
+2020-09-18 15:55:39.495 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:55:39.661 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 15:55:41.137 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 15:55:41.428 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:55:41.452 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 15:55:41.463 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.175 seconds (JVM running for 6.247)
+2020-09-18 15:55:43.918 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 15:55:43.918 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 15:55:43.924 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-09-18 15:55:43.936 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 15:55:47.440 [http-nio-9092-exec-3] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/login
+2020-09-18 15:55:47.443 [http-nio-9092-exec-3] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:LoginController,methodName:login
+2020-09-18 15:55:50.402 [http-nio-9092-exec-2] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 15:55:50.402 [http-nio-9092-exec-2] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:LoginController,methodName:logout
+2020-09-18 15:55:53.222 [http-nio-9092-exec-4] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 15:55:55.738 [http-nio-9092-exec-5] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 15:55:58.440 [http-nio-9092-exec-6] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/login
+2020-09-18 15:55:58.441 [http-nio-9092-exec-6] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:LoginController,methodName:login
+2020-09-18 15:56:04.738 [http-nio-9092-exec-7] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 15:56:04.738 [http-nio-9092-exec-7] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:LoginController,methodName:logout
+2020-09-18 15:56:07.213 [http-nio-9092-exec-8] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 15:58:12.503 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 15:58:12.505 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 15:58:12.506 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:58:18.619 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 1820 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 15:58:18.622 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 15:58:19.817 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 15:58:19.826 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:58:19.827 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 15:58:19.827 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 15:58:19.942 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 15:58:19.942 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1269 ms
+2020-09-18 15:58:20.228 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 15:58:20.407 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 15:58:21.870 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 15:58:22.163 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 15:58:22.182 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 15:58:22.192 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.165 seconds (JVM running for 6.228)
+2020-09-18 15:58:24.799 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 15:58:24.799 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 15:58:24.806 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2020-09-18 15:58:24.818 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 15:58:26.456 [http-nio-9092-exec-2] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 15:58:28.202 [http-nio-9092-exec-3] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/login
+2020-09-18 15:58:28.204 [http-nio-9092-exec-3] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:LoginController,methodName:login
+2020-09-18 15:58:29.684 [http-nio-9092-exec-4] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 15:58:29.685 [http-nio-9092-exec-4] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:LoginController,methodName:logout
+2020-09-18 15:58:30.499 [http-nio-9092-exec-5] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 15:58:31.654 [http-nio-9092-exec-6] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 17:27:13.420 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 17:27:13.432 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 17:27:13.433 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 17:27:20.504 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 5556 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 17:27:20.509 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 17:27:21.990 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 17:27:22.001 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 17:27:22.002 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 17:27:22.002 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 17:27:22.151 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 17:27:22.151 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1524 ms
+2020-09-18 17:27:22.631 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 17:27:22.873 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 17:27:24.656 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 17:27:24.977 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 17:27:25.005 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 17:27:25.018 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 5.184 seconds (JVM running for 7.829)
+2020-09-18 17:27:55.955 [http-nio-9092-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 17:27:55.955 [http-nio-9092-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 17:27:55.963 [http-nio-9092-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-09-18 17:27:55.975 [http-nio-9092-exec-2] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 17:28:08.237 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/login
+2020-09-18 17:28:08.240 [http-nio-9092-exec-1] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:LoginController,methodName:login
+2020-09-18 17:28:13.953 [http-nio-9092-exec-3] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 17:28:33.531 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 17:28:33.536 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 17:28:33.537 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-18 17:28:39.880 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Starting SpringbootEmptyApplication on DESKTOP-NEGHJBV with PID 1768 (D:\workspaces\myself\springboot_empty\target\classes started by asheng in D:\workspaces\myself\springboot_empty)
+2020-09-18 17:28:39.884 [main] INFO  com.dong.empty.SpringbootEmptyApplication - No active profile set, falling back to default profiles: default
+2020-09-18 17:28:41.164 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9092 (http)
+2020-09-18 17:28:41.172 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2020-09-18 17:28:41.172 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-18 17:28:41.173 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-18 17:28:41.279 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-18 17:28:41.279 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1327 ms
+2020-09-18 17:28:41.549 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-18 17:28:41.731 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-09-18 17:28:43.382 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-18 17:28:43.686 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2020-09-18 17:28:43.708 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9092 (http) with context path ''
+2020-09-18 17:28:43.718 [main] INFO  com.dong.empty.SpringbootEmptyApplication - Started SpringbootEmptyApplication in 4.466 seconds (JVM running for 6.672)
+2020-09-18 17:28:45.189 [http-nio-9092-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-18 17:28:45.189 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-18 17:28:45.197 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-09-18 17:28:45.208 [http-nio-9092-exec-1] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 17:28:47.576 [http-nio-9092-exec-3] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/login
+2020-09-18 17:28:47.580 [http-nio-9092-exec-3] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:LoginController,methodName:login
+2020-09-18 17:28:49.993 [http-nio-9092-exec-2] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 17:28:57.596 [http-nio-9092-exec-4] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 17:28:57.628 [http-nio-9092-exec-4] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:LoginController,methodName:logout
+2020-09-18 17:29:01.574 [http-nio-9092-exec-5] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 17:29:01.575 [http-nio-9092-exec-5] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:LoginController,methodName:logout
+2020-09-18 17:29:03.980 [http-nio-9092-exec-6] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 17:29:06.573 [http-nio-9092-exec-7] INFO  c.d.e.g.config.interceptor.RequestLogInterceptor - http://127.0.0.1:9092/logout
+2020-09-18 17:29:06.574 [http-nio-9092-exec-7] INFO  c.d.e.g.config.aop.permission.PermissionAspect - className:LoginController,methodName:logout
+2020-09-18 18:08:20.369 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-09-18 18:08:20.376 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-09-18 18:08:20.377 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
