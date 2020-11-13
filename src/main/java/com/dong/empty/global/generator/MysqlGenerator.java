@@ -20,7 +20,7 @@ import java.util.List;
  **/
 public class MysqlGenerator {
 
-    private static final String TABLE_NAME = "sys_user";
+    private static final String[] TABLE_NAME = {"sys_user"};
 
     public static void main(String[] args) {
         // 代码生成器
@@ -106,6 +106,9 @@ public class MysqlGenerator {
 
         // 设置逻辑删除键
         strategy.setLogicDeleteFieldName("isDeleted");
+
+        // 去除表名前缀
+        strategy.setTablePrefix(TABLE_NAME[0].substring(0, TABLE_NAME[0].indexOf("_") + 1));
 
         // 指定生成的bean的数据库表名
         strategy.setInclude(TABLE_NAME);
