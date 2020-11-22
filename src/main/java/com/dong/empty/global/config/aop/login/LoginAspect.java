@@ -47,9 +47,12 @@ public class LoginAspect implements InitializingBean {
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         String requestURI = request.getRequestURI();
+        if (FREE_LOGIN_URI_LIST.contains(requestURI)) {
+            return proceedingJoinPoint.proceed();
+        }
 
         Long userId = getUserId(request);
-        if (!FREE_LOGIN_URI_LIST.contains(requestURI) && Objects.isNull(userId)) {
+        if (Objects.isNull(userId)) {
             throw new BusinessException(BusinessEnum.NOT_LOGIN);
         }
         return proceedingJoinPoint.proceed();
